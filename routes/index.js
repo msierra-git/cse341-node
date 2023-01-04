@@ -1,7 +1,6 @@
 const routes = require('express').Router();
+const actions = require('../controllers/');
 
-routes.get('/', (req, res) => {
-   res.send('Hello, A. Michael Sierra!')
-})
+routes.get('/', actions.displayStartMessage);
 
 module.exports = routes;
