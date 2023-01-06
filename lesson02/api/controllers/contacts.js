@@ -34,9 +34,10 @@ const findOneContact = async (req, res, next) => {
       result.toArray().then((lists) => {
          res.setHeader('Content-Type', 'application/json');
          res.status(200).json(lists[0]);
-         });
-         console.log(`Found a contact in the collection with the ID '${userId}':`);
-         // console.log(result);
+      });
+
+      console.log(`Found contact in the collection with the ID '${userId}':`);
+      // console.log(result);
    } else {
        console.log(`No contacts found with the ID: '${userId}'`);
    }
