@@ -1,0 +1,79 @@
+// LOCALHOST
+###
+GET http://localhost:8080/contacts
+###
+GET http://localhost:8080/contacts/63b7a070257fd7638af9dee0
+###
+GET http://localhost:8080/contacts/63b7a2cb2c11b1efda73e47a
+###
+GET http://localhost:8080/contacts/63b7a2cb2c11b1efda73e47b
+###
+GET http://localhost:8080/contacts/63b7a2cb2c11b1efda73e47c
+
+### Create contact - space is critical on line 16, do not delete!
+POST http://localhost:8080/contacts HTTP/1.1 
+content-type: application/json
+
+{
+   "firstName":"Bob", 
+   "lastName":"Sierra", 
+   "email":"bob.sierra@email.com", 
+   "favoriteColor":"Indigo", 
+   "birthday":"1970-07-04T00:00:00.000Z"
+}
+
+### PUT contact - color from Pink to Red, and bday year from 1980 to 1985
+PUT http://localhost:8080/contacts/63bbfc3eca420cb3420cd33e HTTP/1.1 
+content-type: application/json
+
+{
+   "firstName":"Bev", 
+   "lastName":"Sierra", 
+   "email":"bev.sierra@email.com", 
+   "favoriteColor":"Red", 
+   "birthday":"1985-08-05T00:00:00.000Z"
+}
+
+### DELETE contact 
+DELETE http://localhost:8080/contacts/63bbff32c3cc6be895666bc5 HTTP/1.1
+
+
+
+// PRODUCTION Deploy
+###
+GET https://sierra341-03.onrender.com/contacts
+###
+GET https://sierra341-03.onrender.com/contacts/63b7a070257fd7638af9dee0
+###
+GET https://sierra341-03.onrender.com/contacts/63b7a2cb2c11b1efda73e47a
+###
+GET https://sierra341-03.onrender.com/contacts/63b7a2cb2c11b1efda73e47b
+###
+GET https://sierra341-03.onrender.com/contacts/63b7a2cb2c11b1efda73e47c
+
+### Create contact - space is critical on line 16, do not delete!
+POST https://sierra341-03.onrender.com/contacts HTTP/1.1 
+content-type: application/json
+
+{
+   "firstName":"Bob", 
+   "lastName":"Sierra", 
+   "email":"bob.sierra@email.com", 
+   "favoriteColor":"Indigo", 
+   "birthday":"1970-07-04T00:00:00.000Z"
+}
+
+### PUT contact - color from Pink to Red, and bday year from 1980 to 1985
+PUT https://sierra341-03.onrender.com/contacts/63bbfc3eca420cb3420cd33e HTTP/1.1 
+content-type: application/json
+
+{
+   "firstName":"Bev", 
+   "lastName":"Sierra", 
+   "email":"bev.sierra@email.com", 
+   "favoriteColor":"Red", 
+   "birthday":"1980-08-05T00:00:00.000Z"
+}
+
+### DELETE contact 
+DELETE https://sierra341-03.onrender.com/contacts/63bbfedcbf486eea38da7b20 HTTP/1.1
