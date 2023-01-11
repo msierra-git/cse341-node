@@ -1,9 +1,9 @@
 // const express = require('express');
 const ObjectID = require('mongodb').ObjectId;
-const mongodb = require('../db/connectdb');
+const mongoDB = require('../db/connectdb');
 
 const findAllContacts = async (req, res) => {
-   const result = await mongodb.getDb().db('cse341_projects').collection('contacts').find();
+   const result = await mongoDB.getDb().db('cse341_projects').collection('contacts').find();
 
    if (result) {
       result.toArray().then((lists) => {
@@ -17,12 +17,12 @@ const findAllContacts = async (req, res) => {
 };
 
 const findOneContact = async (req, res) => {
-   const userId = new ObjectID(req.params.id);
-   const result = await mongodb
+   const userID = new ObjectID(req.params.id);
+   const result = await mongoDB
       .getDb()
       .db('cse341_projects')
       .collection('contacts')
-      .find({ _id: userId });
+      .find({ _id: userID });
 
    if (result) {
       result.toArray().then((lists) => {
@@ -30,10 +30,10 @@ const findOneContact = async (req, res) => {
          res.status(200).json(lists[0]);
       });
 
-      console.log(`Found contact in the collection with the ID '${userId}':`);
+      console.log(`Found contact in the collection with the ID '${userID}':`);
       // console.log(result);
    } else {
-      console.log(`No contacts found with the ID: '${userId}'`);
+      console.log(`No contacts found with the ID: '${userID}'`);
    }
 };
 
@@ -46,7 +46,7 @@ const createContact = async (req, res) => {
       birthday: req.body.birthday
    };
 
-   const result = await mongodb
+   const result = await mongoDB
       .getDb()
       .db('cse341_projects')
       .collection('contacts')
@@ -62,7 +62,7 @@ const createContact = async (req, res) => {
 };
 
 const updateContact = async (req, res) => {
-   const userId = new ObjectID(req.params.id);
+   const userID = new ObjectID(req.params.id);
 
    const newContact = {
       firstName: req.body.firstName,
@@ -72,15 +72,15 @@ const updateContact = async (req, res) => {
       birthday: req.body.birthday
    };
 
-   const result = await mongodb
+   const result = await mongoDB
       .getDb()
       .db('cse341_projects')
       .collection('contacts')
-      .replaceOne({ _id: userId }, newContact);
+      .replaceOne({ _id: userID }, newContact);
 
    if (result.modifiedCount > 0) {
       res.status(204).send();
-      console.log(`Contact updated with user ID: ${userId}`);
+      console.log(`Contact updated with user ID: ${userID}`);
    } else {
       res.status(500).json(result.error || 'An error occurred while updating the contact.');
       console.log('An error occurred while updating the contact');
@@ -88,17 +88,17 @@ const updateContact = async (req, res) => {
 };
 
 const deleteContact = async (req, res) => {
-   const userId = new ObjectID(req.params.id);
+   const userID = new ObjectID(req.params.id);
 
-   const result = await mongodb
+   const result = await mongoDB
       .getDb()
       .db('cse341_projects')
       .collection('contacts')
-      .deleteOne({ _id: userId });
+      .deleteOne({ _id: userID });
 
    if (result.deletedCount > 0) {
       res.status(200).send();
-      console.log(`Contact deleted with user ID: ${userId}`);
+      console.log(`Contact deleted with user ID: ${userID}`);
    } else {
       res.status(500).json(result.error || 'An error occurred while deleting the contact.');
       console.log('An error occurred while deleting the contact');
