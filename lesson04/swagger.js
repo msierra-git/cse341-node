@@ -5,10 +5,12 @@ const doc = {
       title: 'My API',
       description: 'Description'
    },
+
    // URL for localhost
    // host: 'localhost:8080',
+   // schemes: ['http']
    host: 'sierra341-04.onrender.com',
-   schemes: ['http', 'https']
+   schemes: ['https']
 };
 
 const outputFile = './swagger.json';
