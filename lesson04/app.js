@@ -1,11 +1,14 @@
 // L03 - Assignment
 const express = require('express');
 const bodyParser = require('body-parser');
+// const swaggerUI = require('swagger-ui-express');
+// const swaggerDocument = require('./api/swagger.json');
 const mongoDB = require('./api/db/connectdb');
 
 const port = process.env.PORT || 8080;
 const app = express();
 
+// app.use('');
 app.use(bodyParser.json())
    .use((req, res, next) => {
       res.setHeader('Access-Control-Allow-Origin', '*');
