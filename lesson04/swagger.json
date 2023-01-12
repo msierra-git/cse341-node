@@ -8,7 +8,6 @@
   "host": "sierra341-04.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
