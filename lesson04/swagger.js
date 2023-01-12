@@ -5,7 +5,9 @@ const doc = {
       title: 'My API',
       description: 'Description'
    },
-   host: 'localhost:8080',
+   // URL for localhost
+   // host: 'localhost:8080',
+   host: 'sierra341-03.onrender.com',
    schemes: ['http', 'https']
 };
 
