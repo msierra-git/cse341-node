@@ -12,6 +12,8 @@
         "class-methods-use-this":"off",
         "consistent-return":"warn",
         "node/no-missing-require": "warn",
-        "import/no-unresolved": "warn"
+        "node/no-unpublished-require": "warn",
+        "import/no-unresolved": "warn",
+        "import/no-extraneous-dependencies": "warn"
     }
 }
