@@ -1,0 +1,83 @@
+// LOCALHOST
+###
+GET http://localhost:8080/courses
+###
+GET http://localhost:8080/courses/2
+
+### Create new SR course - space is critical on line 10, do not delete!
+POST http://localhost:8080/courses HTTP/1.1 
+content-type: application/json
+
+{   
+    "courseID": 5,
+    "courseName": "New Stake SR Course",
+    "courseLevel": "Stake",
+    "courseType": "In Person",
+    "locationID": 5,
+    "gatheringDay": "Wednesday",
+    "gatheringTime": "7:00PM",
+    "facilitator": "A. Michael Sierra",
+    "enrolledMembers": 16
+}
+
+### PUT Update SR course details
+PUT http://localhost:8080/courses/5 HTTP/1.1 
+content-type: application/json
+
+{ 
+    "courseID": 5,
+    "courseName": "Starting and Growing My Business",
+    "courseLevel": "Stake",
+    "courseType": "In Person",
+    "locationID": 5,
+    "gatheringDay": "Wednesday",
+    "gatheringTime": "7:30PM",
+    "facilitator": "A. Michael Sierra",
+    "enrolledMembers": 8
+}
+
+### DELETE SR course 
+DELETE http://localhost:8080/courses/5 HTTP/1.1
+
+
+
+// PRODUCTION Deploy
+###
+GET https://sierra341-05.onrender.com/courses
+###
+GET https://sierra341-05.onrender.com/courses/3
+
+### Create new SR course
+POST https://sierra341-05.onrender.com/courses HTTP/1.1 
+content-type: application/json
+
+{   
+    "courseID": 5,
+    "courseName": "New Stake SR Course",
+    "courseLevel": "Stake",
+    "courseType": "In Person",
+    "locationID": 5,
+    "gatheringDay": "Wednesday",
+    "gatheringTime": "7:00PM",
+    "facilitator": "A. Michael Sierra",
+    "enrolledMembers": 16
+}
+
+### PUT Update SR course details
+PUT https://sierra341-05.onrender.com/courses/5 HTTP/1.1 
+content-type: application/json
+
+{ 
+    "courseID": 5,
+    "courseName": "Starting and Growing My Business",
+    "courseLevel": "Stake",
+    "courseType": "In Person",
+    "locationID": 5,
+    "gatheringDay": "Wednesday",
+    "gatheringTime": "7:30PM",
+    "facilitator": "A. Michael Sierra",
+    "enrolledMembers": 8
+}
+
+### DELETE SR course 
+DELETE https://sierra341-05.onrender.com/courses/5 HTTP/1.1
