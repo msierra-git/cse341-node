@@ -8,10 +8,10 @@ const doc = {
    },
 
    // URL for localhost
-   host: 'localhost:8080',
-   schemes: ['http']
-   // host: 'sierra341-05.onrender.com',
-   // schemes: ['https']
+   // host: 'localhost:8080',
+   // schemes: ['http']
+   host: 'sierra341-05.onrender.com',
+   schemes: ['https']
 };
 
 const outputFile = './swagger.json';
