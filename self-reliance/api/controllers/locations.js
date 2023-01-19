@@ -4,7 +4,8 @@ const LocationModel = require('../models/locations');
 
 const findAllLocations = async (req, res) => {
    /*
-    #swagger.description = 'This will get all self-reliance location records or documents <br/><br>'	 	
+    #swagger.description = 
+      'This will get all self-reliance location records or documents <br/><br>'	 	
    */
    try {
       const result = await mongoDB.getDb().db('self_reliance').collection('locations').find();
@@ -25,7 +26,8 @@ const findAllLocations = async (req, res) => {
 
 const findOneLocation = async (req, res) => {
    /*
-    #swagger.description = 'This will find one self-reliance location based on the custom ID called locationID.'	 	
+    #swagger.description = 
+      'This will find one self-reliance location based on the custom ID called locationID.'	 	
    */
    try {
       // const locationID = new ObjectID(req.params.locationID);
@@ -54,7 +56,9 @@ const findOneLocation = async (req, res) => {
 
 const createLocation = async (req, res) => {
    /*
-    #swagger.description = 'This will create one self-reliance location using the data in JSON format.<br>It will then return the ID of the new record if operation is successful.'	 	
+    #swagger.description = 
+      'This will create one self-reliance location using the data in JSON format.<br>
+       It will then return the ID of the new record if operation is successful.'	 	
    */
    try {
       // Parameter not being recognised by Swagger UI when using the code on line 61.
@@ -89,7 +93,9 @@ const createLocation = async (req, res) => {
 
 const updateLocation = async (req, res) => {
    /*
-    #swagger.description = 'This will update the details of the self-reliance location based on the supplied custom ID called locationID.<br>It will use the new information as supplied in JSON format.'	     
+    #swagger.description = 
+      'This will update the details of the self-reliance location based on the supplied custom 
+       ID called locationID.<br>It will use the new information as supplied in JSON format.'	     
    */
    try {
       // const locationID = new ObjectID(req.params.locationID);
@@ -109,23 +115,25 @@ const updateLocation = async (req, res) => {
          .getDb()
          .db('self_reliance')
          .collection('locations')
-         .replaceOne({ locationID: locationID }, newLocation);
+         .updateOne({ locationID: locationID }, { $set: newLocation });
 
       if (result.modifiedCount > 0) {
          res.status(204).send();
-         console.log(`Contact SR location with user ID: ${locationID}`);
+         console.log(`Updated SR location with location ID: ${locationID}`);
       } else {
          res.status(500).json(result.error || 'An error occurred while updating the SR location.');
          console.log('An error occurred while updating the SR location');
       }
    } catch (err) {
-      res.status(500).json(err);
+      res.status(500).json(err || 'Error in MongoDB Update Operation');
+      console.log('Error in MongoDB Update Operation');
    }
 };
 
 const deleteLocation = async (req, res) => {
    /*
-    #swagger.description = 'This will remove the self-reliance location based on the supplied custom ID called locationID.'	 	
+    #swagger.description = 
+      'This will remove the self-reliance location based on the supplied custom ID called locationID.'	 	
    */
    try {
       // const locationID = new ObjectID(req.params.locationID);
@@ -139,7 +147,7 @@ const deleteLocation = async (req, res) => {
 
       if (result.deletedCount > 0) {
          res.status(200).send();
-         console.log(`SR location deleted with ID: ${locationID}`);
+         console.log(`SR location deleted with location ID: ${locationID}`);
       } else {
          res.status(500).json(result.error || 'An error occurred while deleting the SR location.');
          console.log('An error occurred while deleting the SR location');

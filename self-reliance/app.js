@@ -1,4 +1,4 @@
-// L04 - Assignment
+// L05 - Assignment - Project 2 - 'Self-Reliance Courses and Locations'
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');

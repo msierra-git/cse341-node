@@ -5,10 +5,10 @@
     "description": "Tracks all self-reliance course details in the stakes, like the name of course, facilitator and where and when the class is held.",
     "version": "1.0.0"
   },
-  "host": "sierra341-05.onrender.com",
+  "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/api-docs": {
@@ -35,7 +35,7 @@
         }
       },
       "post": {
-        "description": "This will create one self-reliance course using the data in JSON format.<br>It will then return the ID of the new record if operation is successful.",
+        "description": "This will create one self-reliance course using the data in JSON format.<br>  It will then return the ID of the new record if operation is successful.",
         "parameters": [
           {
             "name": "body",
@@ -58,6 +58,9 @@
                 "locationID": {
                   "example": "any"
                 },
+                "gatheringDay": {
+                  "example": "any"
+                },
                 "gatheringTime": {
                   "example": "any"
                 },
@@ -74,6 +77,9 @@
         "responses": {
           "201": {
             "description": "Created"
+          },
+          "412": {
+            "description": "Precondition Failed"
           },
           "500": {
             "description": "Internal Server Error"
@@ -99,13 +105,16 @@
           "200": {
             "description": "OK"
           },
+          "412": {
+            "description": "Precondition Failed"
+          },
           "500": {
             "description": "Internal Server Error"
           }
         }
       },
       "put": {
-        "description": "This will update the details of the self-reliance course based on the supplied custom ID called courseID.<br>It will use the new information as supplied in JSON format.",
+        "description": "This will update the details of the self-reliance course based on the supplied custom   ID called courseID.<br>It will use the new information as supplied in JSON format.",
         "parameters": [
           {
             "name": "courseID",
@@ -131,6 +140,9 @@
                 "locationID": {
                   "example": "any"
                 },
+                "gatheringDay": {
+                  "example": "any"
+                },
                 "gatheringTime": {
                   "example": "any"
                 },
@@ -147,6 +159,9 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "412": {
+            "description": "Precondition Failed"
           },
           "500": {
             "description": "Internal Server Error"
@@ -166,6 +181,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "412": {
+            "description": "Precondition Failed"
           },
           "500": {
             "description": "Internal Server Error"
@@ -190,7 +208,7 @@
         }
       },
       "post": {
-        "description": "This will create one self-reliance location using the data in JSON format.<br>It will then return the ID of the new record if operation is successful.",
+        "description": "This will create one self-reliance location using the data in JSON format.<br>  It will then return the ID of the new record if operation is successful.",
         "parameters": [
           {
             "name": "body",
@@ -230,6 +248,9 @@
           "201": {
             "description": "Created"
           },
+          "412": {
+            "description": "Precondition Failed"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -254,13 +275,16 @@
           "200": {
             "description": "OK"
           },
+          "412": {
+            "description": "Precondition Failed"
+          },
           "500": {
             "description": "Internal Server Error"
           }
         }
       },
       "put": {
-        "description": "This will update the details of the self-reliance location based on the supplied custom ID called locationID.<br>It will use the new information as supplied in JSON format.",
+        "description": "This will update the details of the self-reliance location based on the supplied custom   ID called locationID.<br>It will use the new information as supplied in JSON format.",
         "parameters": [
           {
             "name": "locationID",
@@ -306,6 +330,9 @@
           "204": {
             "description": "No Content"
           },
+          "412": {
+            "description": "Precondition Failed"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -324,6 +351,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "412": {
+            "description": "Precondition Failed"
           },
           "500": {
             "description": "Internal Server Error"
