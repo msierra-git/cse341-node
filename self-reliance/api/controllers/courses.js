@@ -63,6 +63,7 @@ const createCourse = async (req, res) => {
          courseLevel: req.body.courseLevel,
          courseType: req.body.courseType,
          locationID: req.body.locationID,
+         gatheringDay: req.body.gatheringDay,
          gatheringTime: req.body.gatheringTime,
          facilitator: req.body.facilitator,
          enrolledMembers: req.body.enrolledMembers
@@ -99,6 +100,7 @@ const updateCourse = async (req, res) => {
          courseLevel: req.body.courseLevel,
          courseType: req.body.courseType,
          locationID: req.body.locationID,
+         gatheringDay: req.body.gatheringDay,
          gatheringTime: req.body.gatheringTime,
          facilitator: req.body.facilitator,
          enrolledMembers: req.body.enrolledMembers
