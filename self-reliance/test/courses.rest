@@ -2,7 +2,7 @@
 ###
 GET http://localhost:8080/courses
 ###
-GET http://localhost:8080/courses/4
+GET http://localhost:8080/courses/63c7a26428c342a43538ed48
 
 ### Create new SR course - space is critical on line 10, do not delete!
 POST http://localhost:8080/courses HTTP/1.1 
@@ -33,7 +33,7 @@ content-type: application/json
     "gatheringDay": "Wednesday",
     "gatheringTime": "7:30PM",
     "facilitator": "A. Michael Sierra",
-    "enrolledMembers": 8
+    "enrolledMembers": 9
 }
 
 ### DELETE SR course 

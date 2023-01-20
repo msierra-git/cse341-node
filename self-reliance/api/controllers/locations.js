@@ -83,7 +83,7 @@ const createLocation = async (req, res) => {
          res.status(201).json(result);
          console.log(`New SR location created with new ID: ${result.insertedId}`);
       } else {
-         res.status(500).json(result.error || 'An error occurred while creating the SR location.');
+         res.status(400).json(result.error || 'An error occurred while creating the SR location.');
          console.log('An error occurred while creating the SR location');
       }
    } catch (err) {
@@ -121,7 +121,7 @@ const updateLocation = async (req, res) => {
          res.status(204).send();
          console.log(`Updated SR location with location ID: ${locationID}`);
       } else {
-         res.status(500).json(result.error || 'An error occurred while updating the SR location.');
+         res.status(400).json(result.error || 'An error occurred while updating the SR location.');
          console.log('An error occurred while updating the SR location');
       }
    } catch (err) {
@@ -149,7 +149,7 @@ const deleteLocation = async (req, res) => {
          res.status(200).send();
          console.log(`SR location deleted with location ID: ${locationID}`);
       } else {
-         res.status(500).json(result.error || 'An error occurred while deleting the SR location.');
+         res.status(400).json(result.error || 'An error occurred while deleting the SR location.');
          console.log('An error occurred while deleting the SR location');
       }
    } catch (err) {

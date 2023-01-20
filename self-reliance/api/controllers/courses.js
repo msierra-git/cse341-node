@@ -84,7 +84,7 @@ const createCourse = async (req, res) => {
          res.status(201).json(result);
          console.log(`New SR Course created with new record ID: ${result.insertedId}`);
       } else {
-         res.status(500).json(result.error || 'An error occurred while creating the SR Course.');
+         res.status(400).json(result.error || 'An error occurred while creating the SR Course.');
          console.log('An error occurred while creating the SR Course');
       }
    } catch (err) {
@@ -122,7 +122,7 @@ const updateCourse = async (req, res) => {
          res.status(204).send();
          console.log(`Updated SR Course with course ID: ${courseID}`);
       } else {
-         res.status(500).json(result.error || 'An error occurred while updating the SR Course.');
+         res.status(400).json(result.error || 'Error. Data not updated.');
          console.log('An error occurred while updating the SR Course');
       }
    } catch (err) {
@@ -150,7 +150,7 @@ const deleteCourse = async (req, res) => {
          res.status(200).send();
          console.log(`SR Course deleted with course ID: ${courseID}`);
       } else {
-         res.status(500).json(result.error || 'An error occurred while deleting the SR Course.');
+         res.status(400).json(result.error || 'An error occurred while deleting the SR Course.');
          console.log('An error occurred while deleting the SR Course');
       }
    } catch (err) {
