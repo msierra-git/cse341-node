@@ -30,7 +30,7 @@ const saveLocation = (req, res, next) => {
    const validationRule = {
       locationID: 'required|integer',
       locationType: 'required|string',
-      locationName: 'required|email',
+      locationName: 'required|string',
       address: 'string',
       contactPerson: 'string',
       contactNumber: 'string',
