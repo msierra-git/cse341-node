@@ -47,6 +47,7 @@ const findOneCourse = async (req, res) => {
          console.log(`Found SR Course in the collection with the ID '${courseID}':`);
          // console.log(result);
       } else {
+         res.status(404).json({ message: 'No SR Course found' });
          console.log(`No SR Course found with the ID: '${courseID}'`);
       }
    } catch (err) {

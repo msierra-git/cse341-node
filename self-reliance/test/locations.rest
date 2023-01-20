@@ -2,7 +2,7 @@
 ###
 GET http://localhost:8080/locations
 ###
-GET http://localhost:8080/locations/63c678a4257df1458acdf8d3
+GET http://localhost:8080/locations/3
 
 ### Create new SR location - space is critical on line 10, do not delete!
 POST http://localhost:8080/locations HTTP/1.1 

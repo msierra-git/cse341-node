@@ -2,7 +2,7 @@
 ###
 GET http://localhost:8080/courses
 ###
-GET http://localhost:8080/courses/2
+GET http://localhost:8080/courses/4
 
 ### Create new SR course - space is critical on line 10, do not delete!
 POST http://localhost:8080/courses HTTP/1.1 
