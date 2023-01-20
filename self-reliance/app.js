@@ -1,4 +1,5 @@
 // L05 - Assignment - Project 2 - 'Self-Reliance Courses and Locations'
+// L06 - Assignment - additional error handling and data validations
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
