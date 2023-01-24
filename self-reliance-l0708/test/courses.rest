@@ -43,6 +43,8 @@ DELETE http://localhost:3000/courses/6 HTTP/1.1
 
 // PRODUCTION Deploy
 ###
+GET https://sierra341-06.onrender.com/profile
+###
 GET https://sierra341-06.onrender.com/courses
 ###
 GET https://sierra341-06.onrender.com/courses/3

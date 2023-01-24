@@ -34,7 +34,7 @@ app.get('/profile', requiresAuth(), (req, res) => {
    res.send(JSON.stringify(req.oidc.user));
 });
 
-app.use('/api-docs', requiresAuth(), swaggerUI.serve, swaggerUI.setup(swaggerDocument))
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
    .use(cors())
    .use(bodyParser.json())
    .use((req, res, next) => {
