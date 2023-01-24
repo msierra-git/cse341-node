@@ -10,7 +10,7 @@ const doc = {
    // URL for localhost
    // host: 'localhost:8080',
    // schemes: ['http']
-   host: 'sierra341-05.onrender.com',
+   host: 'sierra341-06.onrender.com',
    schemes: ['https']
 };
 

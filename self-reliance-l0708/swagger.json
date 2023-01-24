@@ -5,7 +5,7 @@
     "description": "Tracks all self-reliance course details in the stakes, like the name of course, facilitator and where and when the class is held.",
     "version": "1.0.0"
   },
-  "host": "sierra341-05.onrender.com",
+  "host": "sierra341-06.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
@@ -77,6 +77,9 @@
         "responses": {
           "201": {
             "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "412": {
             "description": "Precondition Failed"
@@ -163,6 +166,9 @@
           "204": {
             "description": "No Content"
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "412": {
             "description": "Precondition Failed"
           },
@@ -184,6 +190,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "412": {
             "description": "Precondition Failed"
@@ -250,6 +259,9 @@
         "responses": {
           "201": {
             "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "412": {
             "description": "Precondition Failed"
@@ -333,6 +345,9 @@
           "204": {
             "description": "No Content"
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "412": {
             "description": "Precondition Failed"
           },
@@ -354,6 +369,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "412": {
             "description": "Precondition Failed"

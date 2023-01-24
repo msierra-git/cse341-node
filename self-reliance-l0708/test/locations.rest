@@ -1,11 +1,11 @@
 // LOCALHOST
 ###
-GET http://localhost:8080/locations
+GET http://localhost:3000/locations
 ###
-GET http://localhost:8080/locations/3
+GET http://localhost:3000/locations/3
 
 ### Create new SR location - space is critical on line 10, do not delete!
-POST http://localhost:8080/locations HTTP/1.1 
+POST http://localhost:3000/locations HTTP/1.1 
 content-type: application/json
 
 {
@@ -20,7 +20,7 @@ content-type: application/json
 }
 
 ### PUT Update SR location details
-PUT http://localhost:8080/contacts/4 HTTP/1.1 
+PUT http://localhost:3000/contacts/4 HTTP/1.1 
 content-type: application/json
 
 {
@@ -35,19 +35,19 @@ content-type: application/json
 }
 
 ### DELETE SR location 
-DELETE http://localhost:8080/contacts/6 HTTP/1.1
+DELETE http://localhost:3000/contacts/6 HTTP/1.1
 
 
 
 // PRODUCTION Deploy
 ###
-GET https://sierra341-05.onrender.com/contacts
+GET https://sierra341-06.onrender.com/contacts
 ###
-GET https://sierra341-05.onrender.com/contacts/3
+GET https://sierra341-06.onrender.com/contacts/3
 ###
 
 ### Create new SR location - space is critical on line 10, do not delete!
-POST https://sierra341-05.onrender.com/locations HTTP/1.1 
+POST https://sierra341-06.onrender.com/locations HTTP/1.1 
 content-type: application/json
 
 {
@@ -62,7 +62,7 @@ content-type: application/json
 }
 
 ### PUT Update SR location details
-PUT https://sierra341-05.onrender.com/contacts/4 HTTP/1.1 
+PUT https://sierra341-06.onrender.com/contacts/4 HTTP/1.1 
 content-type: application/json
 
 {
@@ -77,4 +77,4 @@ content-type: application/json
 }
 
 ### DELETE SR location 
-DELETE https://sierra341-05.onrender.com/contacts/6 HTTP/1.1
+DELETE https://sierra341-06.onrender.com/contacts/6 HTTP/1.1
