@@ -2,14 +2,14 @@
   "swagger": "2.0",
   "info": {
     "title": "Self-Reliance Courses",
-    "description": "Tracks all self-reliance course details in the stakes, like the name of course, facilitator and where and when the class is held.<br>This also uses an Auth0 authorization for changing the data collection. Click here to <a href=\"https://sierra341-06.onrender.com/login\" target=\"_blank\">login</a>.",
+    "description": "Tracks all self-reliance course details in the stakes, like the name of course, facilitator and where and when the class is held.<br>This also uses an Auth0 authorization for changing the data collection. Click here to <a href=\"https://sierra341-07.onrender.com/login\" target=\"_blank\">login</a>.",
     "version": "1.0.0",
     "contact": {
       "name": "A. Michael Sierra",
       "email": "sie20003@byui.edu"
     }
   },
-  "host": "sierra341-06.onrender.com",
+  "host": "sierra341-07.onrender.com",
   "servers": [
     {
       "url": "http://localhost:3000",
@@ -20,11 +20,11 @@
       "description": "Develoment login server for authorization"
     },
     {
-      "url": "https://sierra341-06.onrender.com",
+      "url": "https://sierra341-07.onrender.com",
       "description": "Production server using Render"
     },
     {
-      "url": "https://sierra341-06.onrender.com/login",
+      "url": "https://sierra341-07.onrender.com/login",
       "description": "Production login server for authorization"
     }
   ],
@@ -145,7 +145,7 @@
         }
       },
       "put": {
-        "description": "This will update the details of the self-reliance course based on the supplied custom   ID called courseID.<br>It will use the new information as supplied in JSON format.",
+        "description": "This will update the details of the self-reliance course based on the supplied custom   ID called courseID.<br>It will use the new information as supplied in JSON format.<br>  This operation requires a valid authorization.",
         "parameters": [
           {
             "name": "courseID",
@@ -206,7 +206,7 @@
         }
       },
       "delete": {
-        "description": "This will remove the self-reliance course based on the supplied custom ID called courseID.",
+        "description": "This will remove the self-reliance course based on the supplied custom ID called courseID.<br>  This operation requires a valid authorization.",
         "parameters": [
           {
             "name": "courseID",
@@ -251,7 +251,7 @@
         }
       },
       "post": {
-        "description": "This will create one self-reliance location using the data in JSON format.<br>  It will then return the ID of the new record if operation is successful.",
+        "description": "This will create one self-reliance location using the data in JSON format.<br>  It will then return the ID of the new record if operation is successful.<br>  This operation requires a valid authorization.",
         "parameters": [
           {
             "name": "body",
@@ -333,7 +333,7 @@
         }
       },
       "put": {
-        "description": "This will update the details of the self-reliance location based on the supplied custom   ID called locationID.<br>It will use the new information as supplied in JSON format.",
+        "description": "This will update the details of the self-reliance location based on the supplied custom   ID called locationID.<br>It will use the new information as supplied in JSON format.<br>  This operation requires a valid authorization.",
         "parameters": [
           {
             "name": "locationID",
@@ -394,7 +394,7 @@
         }
       },
       "delete": {
-        "description": "This will remove the self-reliance location based on the supplied custom ID called locationID.",
+        "description": "This will remove the self-reliance location based on the supplied custom ID called locationID.<br>  This operation requires a valid authorization.",
         "parameters": [
           {
             "name": "locationID",

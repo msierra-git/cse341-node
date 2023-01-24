@@ -4,7 +4,7 @@ const doc = {
    info: {
       title: 'Self-Reliance Courses',
       description:
-         'Tracks all self-reliance course details in the stakes, like the name of course, facilitator and where and when the class is held.<br>This also uses an Auth0 authorization for changing the data collection. Click here to <a href="https://sierra341-06.onrender.com/login" target="_blank">login</a>.',
+         'Tracks all self-reliance course details in the stakes, like the name of course, facilitator and where and when the class is held.<br>This also uses an Auth0 authorization for changing the data collection. Click here to <a href="https://sierra341-07.onrender.com/login" target="_blank">login</a>.',
       version: '1.0.0',
       contact: {
          name: 'A. Michael Sierra',
@@ -22,11 +22,11 @@ const doc = {
          description: 'Develoment login server for authorization'
       },
       {
-         url: 'https://sierra341-06.onrender.com',
+         url: 'https://sierra341-07.onrender.com',
          description: 'Production server using Render'
       },
       {
-         url: 'https://sierra341-06.onrender.com/login',
+         url: 'https://sierra341-07.onrender.com/login',
          description: 'Production login server for authorization'
       }
    ],
@@ -34,7 +34,7 @@ const doc = {
    // URL for localhost
    // host: 'localhost:3000',
    // schemes: ['http']
-   host: 'sierra341-06.onrender.com',
+   host: 'sierra341-07.onrender.com',
    schemes: ['https']
 };
 

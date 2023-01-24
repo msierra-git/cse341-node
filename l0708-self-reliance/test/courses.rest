@@ -43,14 +43,14 @@ DELETE http://localhost:3000/courses/6 HTTP/1.1
 
 // PRODUCTION Deploy
 ###
-GET https://sierra341-06.onrender.com/profile
+GET https://sierra341-07.onrender.com/profile
 ###
-GET https://sierra341-06.onrender.com/courses
+GET https://sierra341-07.onrender.com/courses
 ###
-GET https://sierra341-06.onrender.com/courses/3
+GET https://sierra341-07.onrender.com/courses/3
 
 ### Create new SR course
-POST https://sierra341-06.onrender.com/courses HTTP/1.1 
+POST https://sierra341-07.onrender.com/courses HTTP/1.1 
 content-type: application/json
 
 {   
@@ -66,7 +66,7 @@ content-type: application/json
 }
 
 ### PUT Update SR course details
-PUT https://sierra341-06.onrender.com/courses/5 HTTP/1.1 
+PUT https://sierra341-07.onrender.com/courses/5 HTTP/1.1 
 content-type: application/json
 
 { 
@@ -82,4 +82,4 @@ content-type: application/json
 }
 
 ### DELETE SR course 
-DELETE https://sierra341-06.onrender.com/courses/5 HTTP/1.1
+DELETE https://sierra341-07.onrender.com/courses/5 HTTP/1.1
