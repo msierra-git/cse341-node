@@ -1,0 +1,80 @@
+// LOCALHOST
+###
+GET http://localhost:8080/locations
+###
+GET http://localhost:8080/locations/3
+
+### Create new SR location - space is critical on line 10, do not delete!
+POST http://localhost:8080/locations HTTP/1.1 
+content-type: application/json
+
+{
+    "locationID": 6,
+    "locationType": "Online",
+    "locationName": "Zoom",
+    "address": "912 3456 7894",
+    "contactPerson": "Michael Sierra",
+    "contactNumber": "0400-001-002",
+    "roomName": "Stake SR Zoom",
+    "capacity": 49
+}
+
+### PUT Update SR location details
+PUT http://localhost:8080/contacts/4 HTTP/1.1 
+content-type: application/json
+
+{
+    "locationID": 4,
+    "locationType": "Physical",
+    "locationName": "Stake Centre",
+    "address": "64 Pringle Road, Hebersham NSW",
+    "contactPerson": "Agent Bishop",
+    "contactNumber": "0400-003-004",
+    "roomName": "Lounge",
+    "capacity": 35
+}
+
+### DELETE SR location 
+DELETE http://localhost:8080/contacts/6 HTTP/1.1
+
+
+
+// PRODUCTION Deploy
+###
+GET https://sierra341-05.onrender.com/contacts
+###
+GET https://sierra341-05.onrender.com/contacts/3
+###
+
+### Create new SR location - space is critical on line 10, do not delete!
+POST https://sierra341-05.onrender.com/locations HTTP/1.1 
+content-type: application/json
+
+{
+    "locationID": 6,
+    "locationType": "Online",
+    "locationName": "Zoom",
+    "address": "912 3456 7894",
+    "contactPerson": "Michael Sierra",
+    "contactNumber": "0400-001-002",
+    "roomName": "Stake SR Zoom",
+    "capacity": 49
+}
+
+### PUT Update SR location details
+PUT https://sierra341-05.onrender.com/contacts/4 HTTP/1.1 
+content-type: application/json
+
+{
+    "locationID": 4,
+    "locationType": "Physical",
+    "locationName": "Stake Centre",
+    "address": "64 Pringle Road, Hebersham NSW",
+    "contactPerson": "Agent Bishop",
+    "contactNumber": "0400-003-004",
+    "roomName": "Lounge",
+    "capacity": 35
+}
+
+### DELETE SR location 
+DELETE https://sierra341-05.onrender.com/contacts/6 HTTP/1.1

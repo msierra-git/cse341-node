@@ -1,0 +1,35 @@
+[
+   {
+      "courseID": 1,
+      "courseName": "Emotional Resiliance",
+      "courseLevel": "Ward",
+      "courseType": "In Person",
+      "locationID": 1,
+      "gatheringDay": "Thursday",
+      "gatheringTime": "7:00PM",
+      "facilitator": "Tasmin Sierra",
+      "enrolledMembers": 15
+   },
+   {
+      "courseID": 2,
+      "courseName": "Find a Better Job",
+      "courseLevel": "Stake",
+      "courseType": "In Person",
+      "locationID": 2,
+      "gatheringDay": "Thursday",
+      "gatheringTime": "7:00PM",
+      "facilitator": "Jake Jacobs",
+      "enrolledMembers": 20
+   },
+   {
+      "courseID": 3,
+      "courseName": "Personal Finances",
+      "courseLevel": "Ward",
+      "courseType": "In Person",
+      "locationID": 3,
+      "gatheringDay": "Tuesday",
+      "gatheringTime": "7:00PM",
+      "facilitator": "Julie Smith",
+      "enrolledMembers": 10
+   }
+]

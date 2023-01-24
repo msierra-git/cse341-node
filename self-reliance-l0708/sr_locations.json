@@ -1,0 +1,52 @@
+[
+  {
+    "locationID": 1,
+    "locationType": "Physical",
+    "locationName": "Stake Centre",
+    "address": "64 Pringle Road, Hebersham NSW",
+    "contactPerson": "Agent Bishop",
+    "contactNumber": "0400-001-002",
+    "roomName": "Primary",
+    "capacity": 30
+  },
+  {
+    "locationID": 2,
+    "locationType": "Physical",
+    "locationName": "Stake Centre",
+    "address": "64 Pringle Road, Hebersham NSW",
+    "contactPerson": "Agent Bishop",
+    "contactNumber": "0400-001-002",
+    "roomName": "Relief Society",
+    "capacity": 30
+  },
+  {
+    "locationID": 3,
+    "locationType": "Physical",
+    "locationName": "Stake Centre",
+    "address": "64 Pringle Road, Hebersham NSW",
+    "contactPerson": "Agent Bishop",
+    "contactNumber": "0400-001-002",
+    "roomName": "High Council",
+    "capacity": 20
+  },
+  {
+    "locationID": 4,
+    "locationType": "Physical",
+    "locationName": "Stake Centre",
+    "address": "64 Pringle Road, Hebersham NSW",
+    "contactPerson": "Agent Bishop",
+    "contactNumber": "0400-001-002",
+    "roomName": "Lounge",
+    "capacity": 20
+  },
+  {
+    "locationID": 5,
+    "locationType": "Physical",
+    "locationName": "Stake Centre",
+    "address": "64 Pringle Road, Hebersham NSW",
+    "contactPerson": "Agent Bishop",
+    "contactNumber": "0400-001-002",
+    "roomName": "Stage",
+    "capacity": 30
+  }
+]

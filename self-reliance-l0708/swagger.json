@@ -1,0 +1,368 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Self-Reliance Courses",
+    "description": "Tracks all self-reliance course details in the stakes, like the name of course, facilitator and where and when the class is held.",
+    "version": "1.0.0"
+  },
+  "host": "sierra341-05.onrender.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/courses/": {
+      "get": {
+        "description": "This will get all self-reliance course records or documents <br/><br>",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "This will create one self-reliance course using the data in JSON format.<br>  It will then return the ID of the new record if operation is successful.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "courseID": {
+                  "example": "any"
+                },
+                "courseName": {
+                  "example": "any"
+                },
+                "courseLevel": {
+                  "example": "any"
+                },
+                "courseType": {
+                  "example": "any"
+                },
+                "locationID": {
+                  "example": "any"
+                },
+                "gatheringDay": {
+                  "example": "any"
+                },
+                "gatheringTime": {
+                  "example": "any"
+                },
+                "facilitator": {
+                  "example": "any"
+                },
+                "enrolledMembers": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/courses/{courseID}": {
+      "get": {
+        "description": "This will find one self-reliance course based on the custom ID called courseID.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "courseID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "This will update the details of the self-reliance course based on the supplied custom   ID called courseID.<br>It will use the new information as supplied in JSON format.",
+        "parameters": [
+          {
+            "name": "courseID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "courseName": {
+                  "example": "any"
+                },
+                "courseLevel": {
+                  "example": "any"
+                },
+                "courseType": {
+                  "example": "any"
+                },
+                "locationID": {
+                  "example": "any"
+                },
+                "gatheringDay": {
+                  "example": "any"
+                },
+                "gatheringTime": {
+                  "example": "any"
+                },
+                "facilitator": {
+                  "example": "any"
+                },
+                "enrolledMembers": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "This will remove the self-reliance course based on the supplied custom ID called courseID.",
+        "parameters": [
+          {
+            "name": "courseID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/locations/": {
+      "get": {
+        "description": "This will get all self-reliance location records or documents <br/><br>",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "This will create one self-reliance location using the data in JSON format.<br>  It will then return the ID of the new record if operation is successful.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "locationID": {
+                  "example": "any"
+                },
+                "locationType": {
+                  "example": "any"
+                },
+                "locationName": {
+                  "example": "any"
+                },
+                "address": {
+                  "example": "any"
+                },
+                "contactPerson": {
+                  "example": "any"
+                },
+                "contactNumber": {
+                  "example": "any"
+                },
+                "roomName": {
+                  "example": "any"
+                },
+                "capacity": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/locations/{locationID}": {
+      "get": {
+        "description": "This will find one self-reliance location based on the custom ID called locationID.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "locationID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "This will update the details of the self-reliance location based on the supplied custom   ID called locationID.<br>It will use the new information as supplied in JSON format.",
+        "parameters": [
+          {
+            "name": "locationID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "locationID": {
+                  "example": "any"
+                },
+                "locationType": {
+                  "example": "any"
+                },
+                "locationName": {
+                  "example": "any"
+                },
+                "address": {
+                  "example": "any"
+                },
+                "contactPerson": {
+                  "example": "any"
+                },
+                "contactNumber": {
+                  "example": "any"
+                },
+                "roomName": {
+                  "example": "any"
+                },
+                "capacity": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "This will remove the self-reliance location based on the supplied custom ID called locationID.",
+        "parameters": [
+          {
+            "name": "locationID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
