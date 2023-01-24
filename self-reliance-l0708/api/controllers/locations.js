@@ -58,7 +58,8 @@ const createLocation = async (req, res) => {
    /*
     #swagger.description = 
       'This will create one self-reliance location using the data in JSON format.<br>
-       It will then return the ID of the new record if operation is successful.'	 	
+       It will then return the ID of the new record if operation is successful.<br>
+       This operation requires a valid authorization.'	 	
    */
    try {
       // Parameter not being recognised by Swagger UI when using the code on line 61.
@@ -95,7 +96,8 @@ const updateLocation = async (req, res) => {
    /*
     #swagger.description = 
       'This will update the details of the self-reliance location based on the supplied custom 
-       ID called locationID.<br>It will use the new information as supplied in JSON format.'	     
+       ID called locationID.<br>It will use the new information as supplied in JSON format.<br>
+       This operation requires a valid authorization.'	     
    */
    try {
       // const locationID = new ObjectID(req.params.locationID);
@@ -133,7 +135,8 @@ const updateLocation = async (req, res) => {
 const deleteLocation = async (req, res) => {
    /*
     #swagger.description = 
-      'This will remove the self-reliance location based on the supplied custom ID called locationID.'	 	
+      'This will remove the self-reliance location based on the supplied custom ID called locationID.<br>
+       This operation requires a valid authorization.'	 	
    */
    try {
       // const locationID = new ObjectID(req.params.locationID);

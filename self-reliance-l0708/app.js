@@ -13,6 +13,7 @@ const swaggerDocument = require('./swagger.json');
 const mongoDB = require('./api/db/connectdb');
 
 const port = process.env.PORT || 3000;
+
 const config = {
    authRequired: false,
    auth0Logout: true,

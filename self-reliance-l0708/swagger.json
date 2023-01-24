@@ -2,10 +2,32 @@
   "swagger": "2.0",
   "info": {
     "title": "Self-Reliance Courses",
-    "description": "Tracks all self-reliance course details in the stakes, like the name of course, facilitator and where and when the class is held.",
-    "version": "1.0.0"
+    "description": "Tracks all self-reliance course details in the stakes, like the name of course, facilitator and where and when the class is held.<br>This also uses an Auth0 authorization for changing the data collection. Click here to <a href=\"https://sierra341-06.onrender.com/login\" target=\"_blank\">login</a>.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "A. Michael Sierra",
+      "email": "sie20003@byui.edu"
+    }
   },
   "host": "sierra341-06.onrender.com",
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Development server for testing"
+    },
+    {
+      "url": "http://localhost:3000/login",
+      "description": "Develoment login server for authorization"
+    },
+    {
+      "url": "https://sierra341-06.onrender.com",
+      "description": "Production server using Render"
+    },
+    {
+      "url": "https://sierra341-06.onrender.com/login",
+      "description": "Production login server for authorization"
+    }
+  ],
   "basePath": "/",
   "schemes": [
     "https"
@@ -35,7 +57,7 @@
         }
       },
       "post": {
-        "description": "This will create one self-reliance course using the data in JSON format.<br>  It will then return the ID of the new record if operation is successful.",
+        "description": "This will create one self-reliance course using the data in JSON format.<br>  It will then return the ID of the new record if operation is successful.<br>  This operation requires a valid authorization.",
         "parameters": [
           {
             "name": "body",
@@ -80,6 +102,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
           },
           "412": {
             "description": "Precondition Failed"
@@ -169,6 +194,9 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "412": {
             "description": "Precondition Failed"
           },
@@ -193,6 +221,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
           },
           "412": {
             "description": "Precondition Failed"
@@ -262,6 +293,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
           },
           "412": {
             "description": "Precondition Failed"
@@ -348,6 +382,9 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "412": {
             "description": "Precondition Failed"
           },
@@ -372,6 +409,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
           },
           "412": {
             "description": "Precondition Failed"

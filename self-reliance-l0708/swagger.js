@@ -4,11 +4,35 @@ const doc = {
    info: {
       title: 'Self-Reliance Courses',
       description:
-         'Tracks all self-reliance course details in the stakes, like the name of course, facilitator and where and when the class is held.'
+         'Tracks all self-reliance course details in the stakes, like the name of course, facilitator and where and when the class is held.<br>This also uses an Auth0 authorization for changing the data collection. Click here to <a href="https://sierra341-06.onrender.com/login" target="_blank">login</a>.',
+      version: '1.0.0',
+      contact: {
+         name: 'A. Michael Sierra',
+         email: 'sie20003@byui.edu'
+      }
    },
 
+   servers: [
+      {
+         url: 'http://localhost:3000',
+         description: 'Development server for testing'
+      },
+      {
+         url: 'http://localhost:3000/login',
+         description: 'Develoment login server for authorization'
+      },
+      {
+         url: 'https://sierra341-06.onrender.com',
+         description: 'Production server using Render'
+      },
+      {
+         url: 'https://sierra341-06.onrender.com/login',
+         description: 'Production login server for authorization'
+      }
+   ],
+
    // URL for localhost
-   // host: 'localhost:8080',
+   // host: 'localhost:3000',
    // schemes: ['http']
    host: 'sierra341-06.onrender.com',
    schemes: ['https']

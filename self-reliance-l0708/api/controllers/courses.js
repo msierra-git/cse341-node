@@ -59,7 +59,8 @@ const createCourse = async (req, res) => {
    /*
     #swagger.description = 
       'This will create one self-reliance course using the data in JSON format.<br>
-       It will then return the ID of the new record if operation is successful.'	 	
+       It will then return the ID of the new record if operation is successful.<br>
+       This operation requires a valid authorization.'
    */
    try {
       // const newCourse = CourseModel(req);
@@ -96,7 +97,8 @@ const updateCourse = async (req, res) => {
    /*
     #swagger.description = 
       'This will update the details of the self-reliance course based on the supplied custom 
-       ID called courseID.<br>It will use the new information as supplied in JSON format.'	     
+       ID called courseID.<br>It will use the new information as supplied in JSON format.<br>
+       This operation requires a valid authorization.'	     
    */
    try {
       // const courseID = new ObjectID(req.params.courseID);
@@ -134,7 +136,8 @@ const updateCourse = async (req, res) => {
 const deleteCourse = async (req, res) => {
    /*
     #swagger.description = 
-      'This will remove the self-reliance course based on the supplied custom ID called courseID.'	 	
+      'This will remove the self-reliance course based on the supplied custom ID called courseID.<br>
+       This operation requires a valid authorization.'	 	
    */
    try {
       // const courseID = new ObjectID(req.params.courseID);

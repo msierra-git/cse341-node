@@ -1,5 +1,4 @@
 const express = require('express');
-// const contacts = require('./contacts');
 const swagger = require('./swagger');
 
 const routes = express.Router();
