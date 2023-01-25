@@ -7,11 +7,20 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const swaggerUI = require('swagger-ui-express');
 const { auth, requiresAuth } = require('express-openid-connect');
+const mongoose = require('mongoose');
+
+const { graphqlHTTP } = require('express-graphql');
+const schema = require('./api/schemas/schema');
 
 const swaggerDocument = require('./swagger.json');
 const mongoDB = require('./api/db/connectdb');
 
+const courses = require('./api/models/courses');
+
+const router = express.Router();
+
 const port = process.env.PORT || 3000;
+
 const config = {
    authRequired: false,
    auth0Logout: true,
@@ -21,7 +30,24 @@ const config = {
    issuerBaseURL: process.env.ISSUER_BASE_URL
 };
 
+mongoose.set('strictQuery', false);
+mongoose.connect(process.env.DB_URI);
+mongoose.connection.once('open', () => {
+   console.log('Conneted to database through Mongoose');
+});
+
 const app = express();
+
+async function all(res, req) {
+   const result = courses.find({});
+   console.log(result);
+   return result;
+}
+
+app.get('/test', (req, res) => {
+   const posts = all(req, res);
+   res.send(posts);
+});
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));
@@ -36,6 +62,16 @@ app.get('/', (req, res) => {
 app.get('/profile', requiresAuth(), (req, res) => {
    res.send(JSON.stringify(req.oidc.user));
 });
+
+// This route will be used as an endpoint to interact with Graphql,
+// All queries will go through this route.
+app.use(
+   '/graphql',
+   graphqlHTTP({
+      schema,
+      graphiql: true
+   })
+);
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
    .use(cors())
@@ -52,11 +88,12 @@ app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
    })
    .use('/', require('./api/routes'));
 
-mongoDB.initDb((err, mongodb) => {
-   if (err) {
-      console.log(err);
-   } else {
-      app.listen(port);
-      console.log(`Connected to DB and App listening on port ${port}`);
-   }
-});
+// mongoDB.initDb((err, mongodb) => {
+//    if (err) {
+//       console.log(err);
+//    } else {
+//       app.listen(port);
+//       console.log(`Connected to DB and App listening on port ${port}`);
+//    }
+// });
+app.listen(port);

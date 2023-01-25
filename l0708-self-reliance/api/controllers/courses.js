@@ -1,6 +1,6 @@
-const ObjectID = require('mongodb').ObjectId;
+// const ObjectID = require('mongodb').ObjectId;
+// const CourseModel = require('../models/courses');
 const mongoDB = require('../db/connectdb');
-const CourseModel = require('../models/courses');
 
 const findAllCourses = async (req, res) => {
    /*

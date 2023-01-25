@@ -1,13 +1,37 @@
-function CourseModel(data) {
-   this.courseID = data.body.courseID;
-   this.courseName = data.body.courseName;
-   this.courseLevel = data.body.courseLevel;
-   this.courseType = data.body.courseType;
-   this.locationID = data.body.locationID;
-   this.gatheringTime = data.body.gatheringTime;
-   this.facilitator = data.body.facilitator;
-   this.enrolledMembers = data.body.enrolledMembers;
-}
+const mongoose = require('mongoose');
+// const { composeWithMongoose } = require('graphql-compose-mongoose');
+
+const { Schema } = mongoose;
+
+const CourseModel = new Schema({
+   courseID: Number,
+   courseName: String,
+   courseLevel: String,
+   courseType: String,
+   locationID: Number,
+   gatheringDay: String,
+   gatheringTime: String,
+   facilitator: String,
+   enrolledMembers: Number
+});
+
+module.exports = mongoose.model('courses', CourseModel);
+
+// module.exports = {
+//    CourseSchema: mongoose.model('courses', CourseModel),
+//    CourseTC: composeWithMongoose(mongoose.model('courses', CourseModel))
+// };
+
+// function CourseModel(data) {
+//    this.courseID = data.body.courseID;
+//    this.courseName = data.body.courseName;
+//    this.courseLevel = data.body.courseLevel;
+//    this.courseType = data.body.courseType;
+//    this.locationID = data.body.locationID;
+//    this.gatheringTime = data.body.gatheringTime;
+//    this.facilitator = data.body.facilitator;
+//    this.enrolledMembers = data.body.enrolledMembers;
+// }
 
 // function CourseModel2(data) {
 //    return {
@@ -22,4 +46,4 @@ function CourseModel(data) {
 //    };
 // }
 
-module.exports = CourseModel;
+// module.exports = { CourseModel };

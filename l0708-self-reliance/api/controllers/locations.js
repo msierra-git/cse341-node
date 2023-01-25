@@ -1,6 +1,6 @@
-const ObjectID = require('mongodb').ObjectId;
+// const ObjectID = require('mongodb').ObjectId;
+// const LocationModel = require('../models/locations');
 const mongoDB = require('../db/connectdb');
-const LocationModel = require('../models/locations');
 
 const findAllLocations = async (req, res) => {
    /*
