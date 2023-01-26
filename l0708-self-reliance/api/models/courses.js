@@ -1,9 +1,7 @@
 const mongoose = require('mongoose');
-// const { composeWithMongoose } = require('graphql-compose-mongoose');
+const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLInt } = require('graphql');
 
-const { Schema } = mongoose;
-
-const CourseModel = new Schema({
+const CourseModel = mongoose.model('courses', {
    courseID: Number,
    courseName: String,
    courseLevel: String,
@@ -15,12 +13,23 @@ const CourseModel = new Schema({
    enrolledMembers: Number
 });
 
-module.exports = mongoose.model('courses', CourseModel);
+const CourseType = new GraphQLObjectType({
+   name: 'Course',
+   fields: {
+      _id: { type: GraphQLID },
+      courseID: { type: GraphQLInt },
+      courseName: { type: GraphQLString },
+      courseLevel: { type: GraphQLString },
+      courseType: { type: GraphQLString },
+      locationID: { type: GraphQLInt },
+      gatheringDay: { type: GraphQLString },
+      gatheringTime: { type: GraphQLString },
+      facilitator: { type: GraphQLString },
+      enrolledMembers: { type: GraphQLInt }
+   }
+});
 
-// module.exports = {
-//    CourseSchema: mongoose.model('courses', CourseModel),
-//    CourseTC: composeWithMongoose(mongoose.model('courses', CourseModel))
-// };
+module.exports = { CourseModel, CourseType };
 
 // function CourseModel(data) {
 //    this.courseID = data.body.courseID;

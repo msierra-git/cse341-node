@@ -11,6 +11,7 @@
         "object-shorthand":"off",
         "class-methods-use-this":"off",
         "consistent-return":"warn",
+        "arrow-body-style":"warn",
         "node/no-missing-require": "warn",
         "node/no-unpublished-require": "warn",
         "import/no-unresolved": "warn",

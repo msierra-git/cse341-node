@@ -1,13 +1,13 @@
 // L05 - Assignment - Project 2 - 'Self-Reliance Courses and Locations'
 // L06 - Assignment - additional error handling and data validations
 // L07 - Assignment - continue progressing the project
-// L08 - Assignment - implement Auth0 in the project and GraphQL
+// L08 - Assignment - implement Auth0 and GraphQL
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const swaggerUI = require('swagger-ui-express');
 const { auth, requiresAuth } = require('express-openid-connect');
-
+const expressGraphQL = require('express-graphql').graphqlHTTP;
 const swaggerDocument = require('./swagger.json');
 const mongoDB = require('./api/db/connectdb');
 
@@ -36,6 +36,19 @@ app.get('/', (req, res) => {
 app.get('/profile', requiresAuth(), (req, res) => {
    res.send(JSON.stringify(req.oidc.user));
 });
+
+// using grapql to interact with collection using mongoose
+require('./api/db/mongoosedb');
+const schemas = require('./api/schemas/schema');
+
+app.use(
+   '/graphql',
+   expressGraphQL({
+      schema: schemas,
+      graphiql: true
+   })
+);
+// - end of graphql codes
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
    .use(cors())

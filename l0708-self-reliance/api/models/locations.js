@@ -1,24 +1,33 @@
 const mongoose = require('mongoose');
-// const { composeWithMongoose } = require('graphql-compose-mongoose');
+const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLInt } = require('graphql');
 
-const { Schema } = mongoose;
+const LocationModel = mongoose.model('locations', {
+   locationID: Number,
+   locationType: String,
+   locationName: String,
+   address: String,
+   contactPerson: String,
+   contactNumber: String,
+   roomName: String,
+   capacity: Number
+});
 
-const LocationModel = new Schema(
-   {
-      locationID: Number,
-      locationType: String,
-      locationName: String,
-      address: String,
-      contactPerson: String,
-      contactNumber: String,
-      roomName: String,
-      capacity: Number
+const LocationType = new GraphQLObjectType({
+   name: 'Location',
+   fields: {
+      _id: { type: GraphQLID },
+      locationID: { type: GraphQLInt },
+      locationType: { type: GraphQLString },
+      locationName: { type: GraphQLString },
+      address: { type: GraphQLString },
+      contactPerson: { type: GraphQLString },
+      contactNumber: { type: GraphQLString },
+      roomName: { type: GraphQLString },
+      capacity: { type: GraphQLInt }
    }
-   // ,
-   // { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } }
-);
+});
 
-module.exports = mongoose.model('locations', LocationModel);
+module.exports = { LocationModel, LocationType };
 
 // function LocationModel(posts) {
 //    this.locationID = posts.body.locationID;
