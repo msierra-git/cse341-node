@@ -3,7 +3,7 @@ const swaggerAutogen = require('swagger-autogen')();
 const doc = {
    info: {
       title: 'Self-Reliance Courses',
-      description: `Tracks all self-reliance course details in the stakes, like the name of course, facilitator and where and when the class is held.<br><br>Note that a valid authorization is required for changing (update, create, delete) the data collection. <br><br>Please click here to <a href="https://sierra341-07.onrender.com/login" target="_blank">login</a> or click here to <a href="https://sierra341-07.onrender.com/logout" target="_blank">logout</a>.}`,
+      description: `Tracks all self-reliance course details in the stakes, like the name of course, facilitator and where and when the class is held.<br><br>Note that a valid authorization is required for changing (update, create, delete) the data collection. <br><br>Please click here to <a href="https://sierra341-07.onrender.com/login" target="_blank">login</a> or click here to <a href="https://sierra341-07.onrender.com/logout" target="_blank">logout</a>.`,
       version: '1.0.0',
       contact: {
          name: 'A. Michael Sierra',
