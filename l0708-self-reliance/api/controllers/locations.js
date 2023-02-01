@@ -4,6 +4,8 @@ const mongoDB = require('../db/connectdb');
 
 const findAllLocations = async (req, res) => {
    /*
+	 #swagger.tags = ['Locations'],
+    #swagger.summary = 'Return list of all locations',
     #swagger.description = 
       'This will get all self-reliance location records or documents <br/><br>'	 	
    */
@@ -26,6 +28,8 @@ const findAllLocations = async (req, res) => {
 
 const findOneLocation = async (req, res) => {
    /*
+	 #swagger.tags = ['Locations'],
+    #swagger.summary = 'Find a location by ID',
     #swagger.description = 
       'This will find one self-reliance location based on the custom ID called locationID.'	 	
    */
@@ -56,6 +60,8 @@ const findOneLocation = async (req, res) => {
 
 const createLocation = async (req, res) => {
    /*
+	 #swagger.tags = ['Locations'],
+    #swagger.summary = 'Create location',
     #swagger.description = 
       'This will create one self-reliance location using the data in JSON format.<br>
        It will then return the ID of the new record if operation is successful.<br>
@@ -94,6 +100,8 @@ const createLocation = async (req, res) => {
 
 const updateLocation = async (req, res) => {
    /*
+	 #swagger.tags = ['Locations'],
+    #swagger.summary = 'Updates location by ID',
     #swagger.description = 
       'This will update the details of the self-reliance location based on the supplied custom 
        ID called locationID.<br>It will use the new information as supplied in JSON format.<br>
@@ -134,6 +142,8 @@ const updateLocation = async (req, res) => {
 
 const deleteLocation = async (req, res) => {
    /*
+	 #swagger.tags = ['Locations'],
+    #swagger.summary = 'Deletes location by ID',
     #swagger.description = 
       'This will remove the self-reliance location based on the supplied custom ID called locationID.<br>
        This operation requires a valid authorization.'	 	

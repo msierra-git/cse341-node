@@ -4,6 +4,8 @@ const mongoDB = require('../db/connectdb');
 
 const findAllCourses = async (req, res) => {
    /*
+	 #swagger.tags = ['Courses'],
+    #swagger.summary = 'Return list of all courses',
     #swagger.description = 
       'This will get all self-reliance course records or documents <br/><br>'	 	
    */
@@ -26,6 +28,8 @@ const findAllCourses = async (req, res) => {
 
 const findOneCourse = async (req, res) => {
    /*
+	 #swagger.tags = ['Courses'],
+    #swagger.summary = 'Find a course by ID',
     #swagger.description = 
       'This will find one self-reliance course based on the custom ID called courseID.'	 	
    */
@@ -57,6 +61,8 @@ const findOneCourse = async (req, res) => {
 
 const createCourse = async (req, res) => {
    /*
+	 #swagger.tags = ['Courses'],
+    #swagger.summary = 'Create course',
     #swagger.description = 
       'This will create one self-reliance course using the data in JSON format.<br>
        It will then return the ID of the new record if operation is successful.<br>
@@ -95,6 +101,8 @@ const createCourse = async (req, res) => {
 
 const updateCourse = async (req, res) => {
    /*
+	 #swagger.tags = ['Courses'],
+    #swagger.summary = 'Updates course by ID',
     #swagger.description = 
       'This will update the details of the self-reliance course based on the supplied custom 
        ID called courseID.<br>It will use the new information as supplied in JSON format.<br>
@@ -135,6 +143,8 @@ const updateCourse = async (req, res) => {
 
 const deleteCourse = async (req, res) => {
    /*
+	 #swagger.tags = ['Courses'],
+    #swagger.summary = 'Deletes course by ID',
     #swagger.description = 
       'This will remove the self-reliance course based on the supplied custom ID called courseID.<br>
        This operation requires a valid authorization.'	 	

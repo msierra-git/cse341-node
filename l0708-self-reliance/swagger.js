@@ -10,25 +10,37 @@ const doc = {
          email: 'sie20003@byui.edu'
       }
    },
-
-   servers: [
+   host: 'sierra341-07.onrender.com',
+   schemes: ['https'],
+   tags: [
       {
-         url: 'http://localhost:3000',
-         description: 'Development server for testing'
+         name: 'Courses',
+         description: ''
       },
       {
-         url: 'http://localhost:3000/login',
-         description: 'Develoment login server for authorization'
-      },
-      {
-         url: 'https://sierra341-07.onrender.com',
-         description: 'Production server using Render'
-      },
-      {
-         url: 'https://sierra341-07.onrender.com/login',
-         description: 'Production login server for authorization'
+         name: 'Locations',
+         description: ''
       }
    ],
+
+   // servers: [
+   //    {
+   //       url: 'http://localhost:3000',
+   //       description: 'Development server for testing'
+   //    },
+   //    {
+   //       url: 'http://localhost:3000/login',
+   //       description: 'Develoment login server for authorization'
+   //    },
+   //    {
+   //       url: 'https://sierra341-07.onrender.com',
+   //       description: 'Production server using Render'
+   //    },
+   //    {
+   //       url: 'https://sierra341-07.onrender.com/login',
+   //       description: 'Production login server for authorization'
+   //    }
+   // ],
 
    // URL for localhost
    // host: 'localhost:3000',
